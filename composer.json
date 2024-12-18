@@ -20,6 +20,7 @@
         "mhmiton/laravel-modules-livewire": "^4.3",
         "nicotc/datatable": "*",
         "nwidart/laravel-modules": "^11.1",
+        "shetabit/visitor": "^4.3",
         "spatie/laravel-permission": "^6.10"
     },
     "require-dev": {

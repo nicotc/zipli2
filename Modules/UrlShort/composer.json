@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/urlshort",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\UrlShort\\": "app/",
+            "Modules\\UrlShort\\Database\\Factories\\": "database/factories/",
+            "Modules\\UrlShort\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\UrlShort\\Tests\\": "tests/"
+        }
+    }
+}

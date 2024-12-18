@@ -1,7 +1,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-      <a href="index.html" class="app-brand-link">
+      <a href="/dashboard" class="app-brand-link">
         <span class="app-brand-logo demo">
           <svg
             width="26px"
@@ -69,38 +69,17 @@
           <div data-i18n="Dashboards">Dashboards</div>
         </a>
       </li>
-
-      {{-- <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Dashboards">Dashboards</div>
-          <div class="badge bg-primary rounded-pill ms-auto">5</div>
+      <li class="menu-item">
+        <a href="{{ route('urlshort.index') }}" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-link"></i>
+            <div data-i18n="Url Shortener">Url Shortener</div>
         </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="/dashboard" class="menu-link active">
-              <div data-i18n="Analytics">Analytics</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-ecommerce-dashboard.html" class="menu-link">
-              <div data-i18n="eCommerce">eCommerce</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-logistics-dashboard.html" class="menu-link">
-              <div data-i18n="Logistics">Logistics</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-academy-dashboard.html" class="menu-link">
-              <div data-i18n="Academy">Academy</div>
-            </a>
-          </li>
-        </ul>
-      </li> --}}
+    </li>
+
+
 
       {{-- ACL --}}
+      @can('acl_access')
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-shield"></i>
@@ -124,6 +103,10 @@
           </li>
         </ul>
       </li>
+        @endcan
+
+
+
 
 
 

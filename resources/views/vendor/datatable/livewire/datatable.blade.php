@@ -39,7 +39,9 @@
                             {{ $createAction['label'] }}
                         </button>
                       @else
-                        <a href="{{ route($createAction['route']) }}" class="btn btn-primary">
+                      {{-- ruta con parametros --}}
+
+                        <a href="{{ $createAction['route'], $createAction['id'] }}" class="btn btn-primary">
                             <i class="{{ $createAction['icon'] }}"></i>
                             {{ $createAction['label'] }}
                         </a>
@@ -77,23 +79,29 @@
                         </th>
                     @endif
                     @endforeach
-                    <th>{{ __('Actions') }}</th>
+
+                    @if(count($actions) > 0)
+                        <th>{{ __('Actions') }}</th>
+                    @endif
+
                 </tr>
             </thead>
             <tbody>
               <tr>
               @foreach ($headers as $key => $value)
-              @if (in_array($key, $visibleColumns))
-                @if ($value['searchable'] == true)
-                    <td>
-                      <input type="text" wire:model.live="search.{{ $key }}" class="form-control" placeholder="Search..">
-                    </td>
-                @else
-                    <td></td>
+                @if (in_array($key, $visibleColumns))
+                    @if ($value['searchable'] == true)
+                        <td>
+                        <input type="text" wire:model.live="search.{{ $key }}" class="form-control" placeholder="Search..">
+                        </td>
+                    @else
+                        <td></td>
+                    @endif
                 @endif
-              @endif
               @endforeach
+              @if(count($actions) > 0)
               <td></td>
+                @endif
               </tr>
 
                 @forelse ($data as $item)
@@ -103,32 +111,34 @@
                             <td>{!! is_array($value) ? $value['func']($item->$key) : $item->$key !!}</td>
                         @endif
                         @endforeach
-                        <td style="width: 5%">
-                            <div class="dropdown">
-                                {{-- <button class="p-0 btn dropdown-toggle" data-bs-toggle="dropdown"> --}}
-                                <button class="p-0 btn" data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
+                        @if(count($actions) > 0)
+                            <td style="width: 5%">
+                                <div class="dropdown">
+                                    {{-- <button class="p-0 btn dropdown-toggle" data-bs-toggle="dropdown"> --}}
+                                    <button class="p-0 btn" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
 
-                                  @foreach ($actions as $key => $action )
+                                    @foreach ($actions as $key => $action )
 
-                                    @if ($action['isModal'] == true)
-                                      <button wire:click="$dispatch('{{ $action['event'] }}', { id: {{ $item->id }} })" class="dropdown-item">
-                                          <i class="{{ $action['icon'] }} me-1"></i> {{  $key  }}
-                                      </button>
-                                    @else
-                                      <a class="dropdown-item" href="{{ route($action['route'], $item->id) }}">
-                                          <i class="{{ $action['icon'] }}  me-1"></i> {{  $key  }}
-                                      </a>
-                                    @endif
+                                        @if ($action['isModal'] == true)
+                                        <button wire:click="$dispatch('{{ $action['event'] }}', { id: {{ $item->id }} })" class="dropdown-item">
+                                            <i class="{{ $action['icon'] }} me-1"></i> {{  $key  }}
+                                        </button>
+                                        @else
+                                        <a class="dropdown-item" href="{{ route($action['route'], $item->id) }}">
+                                            <i class="{{ $action['icon'] }}  me-1"></i> {{  $key  }}
+                                        </a>
+                                        @endif
 
-                                  @endforeach
+                                    @endforeach
 
 
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
+                            </td>
+                        @endif
                     </tr>
                 @empty
                     <tr>

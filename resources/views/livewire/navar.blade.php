@@ -8,19 +8,19 @@
 
       <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
-        <div class="navbar-nav align-items-center">
+        {{-- <div class="navbar-nav align-items-center">
           <div class="mb-0 nav-item navbar-search-wrapper">
             <a class="px-0 nav-item nav-link search-toggler" href="javascript:void(0);">
               <i class="bx bx-search-alt bx-sm"></i>
               <span class="d-none d-md-inline-block">Search (Ctrl+/)</span>
             </a>
           </div>
-        </div>
+        </div> --}}
         <!-- /Search -->
 
         <ul class="flex-row navbar-nav align-items-center ms-auto">
           <!-- Language -->
-          <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
+          {{-- <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <i class="bx bx-globe bx-sm"></i>
             </a>
@@ -46,7 +46,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!--/ Language -->
 
           <!-- Style Switcher -->
@@ -75,7 +75,7 @@
           <!-- / Style Switcher-->
 
           <!-- Quick links  -->
-          <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+          {{-- <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
               <i class="bx bx-grid-alt bx-sm"></i>
             </a>
@@ -153,11 +153,11 @@
                 </div>
               <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
             </div>
-          </li>
+          </li> --}}
           <!-- Quick links -->
 
           <!-- Notification -->
-          <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+          {{-- <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
               <i class="bx bx-bell bx-sm"></i>
               <span class="badge bg-danger rounded-pill badge-notifications">5</span>
@@ -341,7 +341,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!--/ Notification -->
 
           <!-- User -->

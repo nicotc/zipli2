@@ -1,0 +1,11 @@
+{
+    "name": "UrlShort",
+    "alias": "urlshort",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\UrlShort\\Providers\\UrlShortServiceProvider"
+    ],
+    "files": []
+}
