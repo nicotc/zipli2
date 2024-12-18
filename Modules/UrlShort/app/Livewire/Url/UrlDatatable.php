@@ -126,7 +126,7 @@ class UrlDatatable extends  Datatable
                 'searchable' => true
             ],
             'details' => [
-                'label' => 'Details',
+                'label' => 'Visitas',
                 'func' => function($value) {
                     return $value->count();
                  },
